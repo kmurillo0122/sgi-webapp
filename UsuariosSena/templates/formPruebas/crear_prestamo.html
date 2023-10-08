@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "../superAdmin/basesuadmin.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/superAdmin/stylesregusu.css' %}">
+
+    
+    <title>Document</title>
+</head>
+    <section>
+        <h1>Formulario de Préstamo</h1>
+        <h1>Crear Préstamo</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar Préstamo</button>
+        </form>
+    </section>
+    
+ {% endblock %}
+
+</html>

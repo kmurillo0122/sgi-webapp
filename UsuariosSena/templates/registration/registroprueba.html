@@ -1,0 +1,117 @@
+{% extends "../superAdmin/basesuadmin.html" %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    
+    <title>Formulario Registro Usuarios</title>
+    
+</head>
+
+    <section class="section">
+        
+    <!-- Inicio del Forumlario-->
+
+        <div class="signupFrm">
+            <form action="" class="form" method="post">
+              <h1 class="title">Registro de Usuarios</h1>
+
+              {% csrf_token %}
+              
+
+
+            <div class="container-1">
+                <div class="inputContainer">
+                    <input type="text" class="inputform" placeholder="Nombres" name="nombre" required>
+                    <label for="" class="labelform">Nombres</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="inputform" placeholder="a" required>
+                    <label for="" class="labelform" name="apellido">Apellidos</label>
+                </div>
+                <div class="selectContainer">                   
+                    <label for="tipoIdentificacion" class="labelformselect">Tipo Documento</label>
+                    <div>
+                    <select class="selector" name="tipoIdentificacion" id="tipoIdentificacion">
+                    <option value="">C.C</option>
+                    <option value="">Pasaporte</option>
+                    <option value="">T.I</option>
+                    <option value="">Otro</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="inputform" placeholder="a" required>
+                    <label for="" class="labelform" name="numeroIdentificacion">Numero Identificacion</label>
+                </div>    
+            </div>
+            <div class="container-1">
+                <div class="inputContainer">
+                    <input type="email" class="inputform" placeholder="a" name="correoSena" required>
+                    <label for="correoSena" class="labelform">Correo Sena</label>
+                </div>
+                <div class="selectContainer">                   
+                    <label for="rol" class="labelformselect">Rol</label>
+                    <div>
+                    <select class="selector" name="rol" id="rol">
+                    <option value="">Instructor</option>
+                    <option value="">Monitor</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="selectContainer">                   
+                    <label for="cuentadante" class="labelformselect">Tipo Cuentadante</label>
+                    <div>
+                    <select class="selector" name="cuentadante" id="cuentadante">
+                    <option value="">adminS</option>
+                    <option value="">adminD</option>
+                    <option value="">monitor</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="selectContainer">                   
+                    <label for="tipoContrato" class="labelformselect">Tipo Contrato</label>
+                    <div>
+                    <select class="selector" name="tipoContrato" id="tipoContrato">
+                    <option value="">Planta</option>
+                    <option value="">Contratista</option>
+                    <option value="">Aprendiz</option>
+
+                    </select>
+                    </div>
+                </div>
+                <div class="selectContainer">
+                    <label for="duracionContrato" class="labelformselect" name="duracionContrato">Duracion Contrato</label>
+                    <div>
+                        <select class="selector" name="duracionContrato" id="duracionContrato">
+                            <option value="">Activo</option>
+                            <option value="">Inactivo</option>
+                        </select>
+                    </div>
+                </div>    
+            </div>
+            <div class="container-1">
+                <div class="inputContainer">
+                    <input type="password" class="inputform" placeholder="Contraseña" name="contraSena" required>
+                    <label for="contraSena" class="labelform">Contraseña</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="inputform" placeholder="a" required>
+                    
+                    <label for="validacionContraSena" class="labelform" name="validacionContraSena">Repetir Contraseña</label>
+                </div>
+            </DIV>
+                <div class="container-botones">
+                    
+                    <button type="submit" class="submitBtn" ><span id="span">GUARDAR</span></button>
+                    <button type="submit" class="submitBtn" ><span>CANCELAR</span></button>
+                
+                </div>
+            
+            </form>
+            
+        </div>  
+
+    </section>
+    {% endblock %}
